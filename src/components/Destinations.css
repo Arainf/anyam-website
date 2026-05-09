@@ -1,0 +1,179 @@
+.dest-section { padding: 160px 0 120px; background: #fff; }
+
+.dest-head { max-width: 760px; margin-bottom: 80px; }
+.dest-head .display { font-size: clamp(44px, 6.5vw, 96px); }
+.dest-lead {
+  margin-top: 28px;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 580px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ── Problem cards ── */
+.prob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.prob-card {
+  border-radius: 28px;
+  padding: 40px 36px 44px;
+  background: var(--cream-2);
+  border: 1.5px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s;
+}
+.prob-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--pc);
+  border-radius: 2px 2px 0 0;
+}
+.prob-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px -16px rgba(26,18,25,0.14);
+}
+
+.prob-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.prob-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(48px, 5vw, 72px);
+  font-weight: 900;
+  color: var(--pc);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.prob-unit {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.prob-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+.prob-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  font-weight: 400;
+}
+
+/* ── Divider ── */
+.dest-divider {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 100px 32px;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 32px;
+}
+.dest-divider-line { flex: 1; height: 1px; background: var(--line); }
+.dest-divider-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+/* ── How grid ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-bottom: 72px;
+}
+.how-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.how-icon {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.how-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.how-body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  font-weight: 400;
+}
+
+/* ── CTA row ── */
+.dest-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 40px;
+  border-radius: 24px;
+  background: var(--cream-2);
+  border: 1.5px solid var(--line);
+}
+.dest-islands-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.dest-islands-badge img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.dib-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.dib-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--ink-3);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+@media (max-width: 980px) {
+  .prob-grid { grid-template-columns: 1fr !important; }
+  .how-grid { grid-template-columns: 1fr 1fr !important; }
+  .dest-head { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .dest-cta-row { flex-direction: column; text-align: center; align-items: center; }
+}

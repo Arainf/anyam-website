@@ -1,0 +1,32 @@
+.features { background: #fff; color: var(--ink); position: relative; overflow: hidden; }
+.features::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg,var(--red),var(--orange),var(--yellow),var(--green),var(--teal),var(--blue),var(--purple)); }
+.feat { padding: 120px 0; border-top: 1px solid var(--line); position: relative; overflow: hidden; }
+
+/* transparent asset bg per section */
+.feat-bg-asset {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.07;
+  width: 480px;
+  height: 480px;
+  object-fit: contain;
+}
+.feat-bg-asset--right { right: -60px; top: 50%; transform: translateY(-50%); }
+.feat-bg-asset--left  { left:  -60px; top: 50%; transform: translateY(-50%); }
+
+.feat-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; position: relative; z-index: 1; }
+.feat-inner.rev { direction: rtl; }
+.feat-inner.rev > * { direction: ltr; }
+
+.feat-tag { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.20em; font-weight: 700; text-transform: uppercase; color: var(--red); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.feat-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--red); }
+
+.feat-text h2 { font-family: 'Galindo', serif; font-size: clamp(40px,5.5vw,78px); font-weight: 400; line-height: 1.0; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 28px; }
+.feat-text h2 em { font-style: italic; color: var(--red); }
+.feat-text p { font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.7; color: var(--ink-2); max-width: 480px; margin-bottom: 36px; font-weight: 400; }
+.feat-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.feat-pill { padding: 8px 16px; border-radius: 99px; border: 1.5px solid var(--line-2); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--cream-2); }
+
+.feat-visual { position: relative; border-radius: 28px; overflow: hidden; background: var(--cream-2); border: 1.5px solid var(--line); aspect-ratio: 4/3; display: flex; align-items: stretch; }
+.feat-visual-inner { width: 100%; display: flex; flex-direction: column; padding: 28px; gap: 14px; position: relative; }

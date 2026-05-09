@@ -1,0 +1,466 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0 72px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero-glow {
+  position: absolute;
+  left: 58%;
+  top: 42%;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26,18,25,0.06) 0%, rgba(229,82,58,0.05) 38%, transparent 62%);
+  filter: blur(48px);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+/* ── Copy ── */
+.hero-eyebrow { opacity: 0; transform: translateY(16px); }
+.hero-headline { font-size: clamp(52px, 7.8vw, 118px); margin-top: 24px; }
+.hero-headline .line { display: block; opacity: 0; transform: translateY(40px); }
+.hero-headline-accent em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--red);
+}
+.hero-sub-text {
+  margin-top: 28px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  max-width: 460px;
+  opacity: 0;
+  transform: translateY(24px);
+  font-weight: 400;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.store-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 18px;
+  border-radius: 14px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+.store-badge svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--ink); }
+.store-badge div { display: flex; flex-direction: column; }
+.store-label { font-size: 9px; font-weight: 600; letter-spacing: 0.06em; text-transform: none; color: var(--ink-2); font-family: 'Montserrat', sans-serif; }
+.store-name { font-size: 14px; font-weight: 700; color: var(--ink); font-family: 'Montserrat', sans-serif; margin-top: 1px; }
+.store-badge--soon { position: relative; }
+.store-badge--soon::after {
+  content: 'Soon';
+  position: absolute;
+  top: -9px; right: -6px;
+  background: var(--red);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(229,82,58,0.35);
+}
+
+.hero-mark-block {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-mark-block .mk {
+  width: 48px;
+  height: 48px;
+  background: url('/assets/anyam-logo.png') center/contain no-repeat;
+  flex-shrink: 0;
+}
+.hero-mark-block .mk-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.mk-line--accent { color: var(--orange); }
+.mk-line--muted { color: var(--ink-3); letter-spacing: 0.1em; }
+
+/* ── Phone mockups ── */
+.hero-phones {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  height: 780px;
+  margin-right: -32px;
+  perspective: 1400px;
+  perspective-origin: 52% 35%;
+}
+
+.phone-mock {
+  opacity: 0;
+  transform: translateY(60px);
+  flex-shrink: 0;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.phone-mock::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 78%;
+  height: 22px;
+  transform: translateX(-50%) translateZ(-80px);
+  background: radial-gradient(ellipse at center, rgba(26,18,25,0.5) 0%, rgba(26,18,25,0.15) 45%, transparent 70%);
+  filter: blur(18px);
+  pointer-events: none;
+  z-index: 0;
+}
+.phone-mock--left  { align-self: center; margin-right: -44px; z-index: 1; }
+.phone-mock--center { align-self: flex-start; margin-top: 4px; z-index: 3; }
+.phone-mock--right { align-self: center; margin-left: -48px; z-index: 1; }
+
+.phone-frame {
+  border-radius: 46px;
+  position: relative;
+  z-index: 1;
+  padding: 12px;
+  transform-origin: center bottom;
+  background:
+    linear-gradient(155deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.02) 28%, transparent 45%),
+    linear-gradient(320deg, rgba(0,0,0,0.45) 0%, transparent 55%),
+    linear-gradient(180deg, #252030 0%, #121018 100%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.22) inset,
+    0 -1px 0 rgba(0,0,0,0.45) inset,
+    0 0 0 1px rgba(255,255,255,0.07) inset,
+    0 28px 56px -8px rgba(26,18,25,0.25),
+    0 72px 140px -32px rgba(26,18,25,0.55),
+    0 120px 200px -48px rgba(26,18,25,0.35);
+}
+.phone-mock--left .phone-frame {
+  transform: rotate(7deg) rotateY(20deg) translateY(8px) translateZ(-24px);
+}
+.phone-mock--center .phone-frame {
+  transform: rotate(-1deg) rotateY(-4deg) rotateX(4deg) translateZ(42px) scale(1.04);
+}
+.phone-mock--right .phone-frame {
+  transform: rotate(-7deg) rotateY(-20deg) translateY(8px) translateZ(-24px);
+}
+
+.phone-mock--left .phone-frame,
+.phone-mock--right .phone-frame { width: 278px; }
+.phone-mock--center .phone-frame { width: 312px; }
+
+.phone-notch {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 26px;
+  background: linear-gradient(180deg, #2a2435 0%, #121018 100%);
+  border-radius: 999px;
+  z-index: 10;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.phone-screen {
+  border-radius: 36px;
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.35) inset,
+    0 12px 40px rgba(0,0,0,0.35) inset;
+}
+.phone-mock--left .phone-screen,
+.phone-mock--right .phone-screen { height: 536px; }
+.phone-mock--center .phone-screen { height: 598px; }
+
+@media (max-width: 1280px) {
+  .hero-phones {
+    height: 700px;
+    margin-right: -16px;
+    perspective: 1200px;
+  }
+  .phone-mock--left { margin-right: -34px; }
+  .phone-mock--right { margin-left: -36px; }
+  .phone-mock--left .phone-frame,
+  .phone-mock--right .phone-frame { width: 244px; }
+  .phone-mock--center .phone-frame { width: 282px; }
+  .phone-mock--left .phone-screen,
+  .phone-mock--right .phone-screen { height: 472px; }
+  .phone-mock--center .phone-screen { height: 540px; }
+}
+
+@media (max-height: 860px) and (min-width: 981px) {
+  .hero {
+    min-height: auto;
+  }
+  .hero-phones {
+    height: 660px;
+  }
+}
+
+/* Status bar */
+.ps-status {
+  position: absolute;
+  top: 18px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 9px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255,255,255,0.9);
+  z-index: 5;
+}
+.ps-status--light { color: rgba(255,255,255,0.95); }
+
+/* ── Welcome screen ── */
+.phone-screen--welcome { background: url('/assets/screen-2.png') center/cover no-repeat; }
+.ps-welcome-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #2d5a4e 0%, #1a3a50 40%, #0d1b2a 100%);
+}
+.ps-welcome-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/assets/asset-4.png') center/cover no-repeat;
+  opacity: 0.15;
+  mix-blend-mode: luminosity;
+}
+.ps-welcome-content {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 20px 16px 24px;
+  background: linear-gradient(to top, rgba(10,20,30,0.97) 60%, transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 3;
+}
+.ps-welcome-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2px;
+}
+.ps-welcome-title strong { font-weight: 900; font-style: italic; }
+.ps-welcome-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+  margin-bottom: 6px;
+}
+.ps-btn {
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+.ps-btn--primary {
+  background: linear-gradient(135deg, #3D6FB8, #8D5DA8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.ps-btn-icon { font-size: 12px; }
+.ps-or {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.ps-btn--fb { background: #3b5998; color: #fff; }
+.ps-btn--g { background: #4CAF50; color: #fff; }
+
+/* ── Onboarding screen ── */
+.phone-screen--onboard { background: url('/assets/screen-3.png') center/cover no-repeat; }
+.ps-onboard-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg, #1a4a3a 0%, #0d3050 60%, #050e1a 100%);
+}
+.ps-onboard-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26,74,58,0.5) 0%,
+    rgba(13,48,80,0.3) 50%,
+    rgba(5,14,26,0.8) 100%
+  );
+}
+.ps-onboard-content {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 30px 20px 32px;
+  z-index: 3;
+}
+.ps-onboard-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.ps-onboard-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+.ps-onboard-btn {
+  background: rgba(61,111,184,0.85);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+/* ── Trip detail screen ── */
+.phone-screen--trip { background: url('/assets/screen-1.png') center/cover no-repeat; }
+.ps-trip-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg, #1a5040 0%, #0d4060 40%, #081520 100%);
+}
+.ps-trip-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.6) 100%);
+}
+.ps-trip-header {
+  position: absolute;
+  top: 40px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 3;
+}
+.ps-trip-close, .ps-trip-more {
+  width: 30px; height: 30px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+.ps-trip-content {
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  padding: 20px 18px 28px;
+  z-index: 3;
+}
+.ps-trip-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.ps-trip-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+@media (max-width: 980px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .hero-sub-text { margin-left: auto; margin-right: auto; }
+  .hero-badges { justify-content: center; }
+  .hero-mark-block { justify-content: center; }
+  .hero-phones {
+    height: 520px;
+    margin-right: 0;
+    perspective: 1000px;
+    perspective-origin: 50% 40%;
+  }
+  .phone-mock--left { margin-right: -28px; }
+  .phone-mock--right { margin-left: -32px; }
+  .phone-mock--left .phone-frame,
+  .phone-mock--right .phone-frame { width: 178px; }
+  .phone-mock--center .phone-frame { width: 202px; }
+  .phone-mock--left .phone-screen,
+  .phone-mock--right .phone-screen { height: 344px; }
+  .phone-mock--center .phone-screen { height: 392px; }
+  .phone-mock--left .phone-frame {
+    transform: rotate(6deg) rotateY(14deg) translateZ(-12px);
+  }
+  .phone-mock--center .phone-frame {
+    transform: rotate(0deg) rotateY(0deg) rotateX(3deg) translateZ(20px) scale(1.03);
+  }
+  .phone-mock--right .phone-frame {
+    transform: rotate(-6deg) rotateY(-14deg) translateZ(-12px);
+  }
+  .phone-frame { border-radius: 36px; padding: 9px; }
+  .phone-screen { border-radius: 28px; }
+  .phone-notch { top: 13px; width: 72px; height: 21px; }
+}

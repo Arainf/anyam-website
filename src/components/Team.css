@@ -1,0 +1,30 @@
+﻿.team { padding: 180px 0; }
+.team-head { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: end; margin-bottom: 80px; }
+.team-head h2 { font-size: clamp(44px,7vw,100px); }
+.team-head .lead { font-family: 'Galindo', serif; font-size: 22px; line-height: 1.4; color: var(--ink-2); font-weight: 300; }
+.team-head .lead em { font-style: italic; color: var(--red); }
+.team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.member { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 0; overflow: hidden; position: relative; transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; display: flex; flex-direction: column; }
+.member:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(42,31,26,0.20); }
+.portrait { aspect-ratio: 1/1.05; width: 100%; position: relative; overflow: hidden; background: linear-gradient(135deg,var(--c1),var(--c2)); }
+.portrait::after { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/></svg>"); mix-blend-mode: multiply; opacity: 0.10; }
+.portrait .glyph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.portrait .glyph img { width: 42%; height: 42%; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.25)); transition: transform .8s cubic-bezier(.2,.8,.2,1); }
+.member:hover .portrait .glyph img { transform: scale(1.08) rotate(-4deg); }
+.portrait .initials { position: absolute; left: 18px; top: 14px; font-family: 'Galindo', serif; font-style: italic; font-size: 32px; font-weight: 400; color: var(--cream); opacity: 0.95; letter-spacing: -0.02em; text-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.portrait .corner { position: absolute; right: 14px; bottom: 12px; font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--cream); opacity: 0.8; }
+.member .info { padding: 20px 22px 22px; }
+.member .nm { font-family: 'Galindo', serif; font-size: 22px; font-weight: 400; letter-spacing: -0.015em; color: var(--ink); }
+.member .role { margin-top: 4px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--ink-3); }
+.member .bio { margin-top: 14px; font-size: 13px; line-height: 1.55; color: var(--ink-2); }
+.member .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.member .tags span { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--ink-2); padding: 4px 9px; border-radius: 99px; background: var(--cream-2); border: 1px solid var(--line); }
+
+.team-footnote { margin-top: 60px; padding: 32px 36px; border-radius: 20px; background: var(--paper); border: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; }
+.team-footnote .badge { width: 60px; height: 60px; border-radius: 14px; background: linear-gradient(135deg,var(--blue),var(--purple)); display: flex; align-items: center; justify-content: center; font-family: 'Galindo', serif; font-style: italic; color: var(--cream); font-size: 28px; }
+.team-footnote .copy { font-family: 'Galindo', serif; font-size: 18px; line-height: 1.4; color: var(--ink); font-weight: 400; }
+.team-footnote .copy em { font-style: italic; color: var(--red); }
+.team-footnote .copy small { display: block; margin-top: 4px; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; font-style: normal; }
+.team-footnote .cta-mini { font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; padding: 14px 20px; border-radius: 99px; background: var(--ink); color: var(--cream); text-decoration: none; transition: background .3s, transform .3s; white-space: nowrap; }
+.team-footnote .cta-mini:hover { background: var(--red); transform: translateY(-2px); }
+

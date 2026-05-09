@@ -1,0 +1,5 @@
+﻿.marquee-band { margin-top: 64px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 18px 0; background: var(--cream); }
+.marquee { display: flex; gap: 48px; white-space: nowrap; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); }
+.marquee span { display: inline-flex; align-items: center; gap: 18px; }
+.marquee i.dot { width: 10px; height: 10px; background: var(--c); transform: rotate(45deg); display: inline-block; font-style: normal; }
+

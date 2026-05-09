@@ -1,0 +1,84 @@
+﻿.preview { padding: 160px 0 120px; position: relative; overflow: hidden; }
+.preview-head { text-align: center; max-width: 780px; margin: 0 auto 72px; }
+.preview-head h2 { font-size: clamp(48px,7.5vw,116px); margin-top: 24px; }
+.preview-head p { margin-top: 18px; font-size: 17px; color: var(--ink-2); max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.55; }
+
+/* Stage: fixed height so phones sit inside it, clipped at edges */
+.device-stage {
+  position: relative;
+  height: 640px;
+  overflow: visible;
+  perspective: 2400px;
+  perspective-origin: 50% 50%;
+}
+
+/* Each phone: centered absolutely inside the stage */
+.phone-secondary {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 260px;
+  aspect-ratio: 9/19.5;
+  border-radius: 40px;
+  background: var(--ink);
+  padding: 10px;
+  box-shadow: 0 40px 80px -28px rgba(42,31,26,0.55), 0 0 0 1px rgba(42,31,26,0.10);
+  transform-style: preserve-3d;
+  will-change: transform;
+  /* Pre-center the phone so x:0 = perfect center */
+  margin-left: -130px;
+  margin-top: -281px; /* half of 260*(19.5/9)=563px */
+}
+.phone-secondary .screen { width: 100%; height: 100%; border-radius: 32px; overflow: hidden; background: var(--paper); position: relative; }
+
+.story-screen { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.story-screen .hero-img { height: 55%; background: linear-gradient(160deg, var(--orange), var(--red)); position: relative; overflow: hidden; }
+.story-screen .hero-img img { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); width: 120px; }
+.story-screen .body { flex: 1; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.story-screen .body .lab { font-family: 'Montserrat', sans-serif; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); font-weight: 700; }
+.story-screen .body h6 { font-family: 'Galindo', serif; font-size: 18px; line-height: 1.1; font-weight: 400; letter-spacing: -0.01em; color: var(--ink); }
+.story-screen .body p { font-size: 10px; line-height: 1.45; color: var(--ink-2); }
+.story-screen .body .by { margin-top: auto; display: flex; align-items: center; gap: 8px; font-size: 9px; color: var(--ink-3); }
+.story-screen .body .av { width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg,var(--yellow),var(--red)); }
+
+.booking-screen { position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--cream); }
+.booking-screen .top { padding: 20px 16px 12px; display: flex; align-items: center; justify-content: space-between; }
+.booking-screen .top .ttl { font-family: 'Galindo', serif; font-size: 14px; font-weight: 500; letter-spacing: -0.01em; }
+.booking-screen .bk-visual { margin: 0 16px; height: 140px; border-radius: 14px; background: linear-gradient(135deg,var(--green),var(--teal)); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.booking-screen .bk-visual img { width: 90px; }
+.booking-screen .info { padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.booking-screen .info h6 { font-family: 'Galindo', serif; font-size: 18px; font-weight: 400; }
+.booking-screen .info .meta { font-size: 10px; color: var(--ink-3); }
+.booking-screen .pricerow { margin-top: auto; padding: 14px 16px; background: var(--paper); border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+.booking-screen .pricerow .pp { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--ink-3); }
+.booking-screen .pricerow .pn { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--red); }
+.booking-screen .pricerow .btn-mini { padding: 7px 12px; border-radius: 999px; background: var(--ink); color: var(--cream); font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.device-tag { position: absolute; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; box-shadow: 0 18px 40px -16px rgba(42,31,26,0.22), 0 4px 12px -4px rgba(42,31,26,0.08); font-family: 'Montserrat', sans-serif; font-size: 12px; will-change: transform; z-index: 99999; pointer-events: none; min-width: 170px; }
+.device-tag .lab { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; margin-bottom: 4px; }
+.device-tag .val { font-family: 'Galindo', serif; font-size: 18px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
+.device-tag .val em { font-style: italic; color: var(--red); }
+
+.carousel-footer { display: flex; flex-direction: column; align-items: center; gap: 20px; padding-top: 48px; position: relative; z-index: 10; }
+
+.phone-carousel-ctrl {
+  display: inline-flex; align-items: center; gap: 16px;
+  background: var(--paper); border: 1px solid var(--line);
+  border-radius: 999px; padding: 8px 12px;
+  box-shadow: 0 8px 24px -12px rgba(42,31,26,0.14);
+}
+.phone-arr {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid var(--line-2); background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .25s, border-color .25s, transform .25s;
+  flex-shrink: 0;
+}
+.phone-arr:hover { background: var(--ink); border-color: var(--ink); transform: scale(1.06); }
+.phone-arr:hover svg { stroke: #fff; }
+.phone-arr svg { width: 16px; height: 16px; stroke: var(--ink); stroke-width: 2; fill: none; transition: stroke .25s; }
+.phone-dots { display: flex; gap: 7px; align-items: center; padding: 0 4px; }
+.phone-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line-2); cursor: pointer; transition: background .3s, transform .3s; }
+.phone-dot.active { background: var(--ink); transform: scale(1.4); }
+.phone-screen-label { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; color: var(--ink-3); }
+

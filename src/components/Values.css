@@ -1,0 +1,14 @@
+﻿.values { padding: 160px 0; position: relative; }
+.values-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 80px; }
+.values-head h2 { font-size: clamp(44px,7vw,104px); }
+.values-head .lead { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 420px; }
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.value-card { background: var(--paper); border: 1px solid var(--line); border-radius: 24px; padding: 34px 30px 28px; min-height: 380px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .5s cubic-bezier(.2,.8,.2,1), box-shadow .5s; position: relative; overflow: hidden; }
+.value-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(42,31,26,0.20); }
+.value-card .num { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.18em; font-weight: 700; color: var(--ink-3); text-transform: uppercase; }
+.value-card .word { font-family: 'Galindo', serif; font-size: 56px; line-height: 1; font-weight: 400; font-style: italic; letter-spacing: -0.025em; color: var(--c-accent, var(--red)); margin: 14px 0 6px; }
+.value-card .gloss { font-family: 'Montserrat', sans-serif; font-size: 13px; letter-spacing: 0.04em; color: var(--ink-3); font-weight: 500; text-transform: uppercase; }
+.value-card p { font-size: 15px; line-height: 1.55; color: var(--ink-2); margin-top: 24px; }
+.value-card .ic { position: absolute; right: -22px; bottom: -22px; width: 140px; height: 140px; opacity: 0.18; transform: rotate(-12deg); transition: transform .6s, opacity .4s; }
+.value-card:hover .ic { transform: rotate(0deg) scale(1.05); opacity: 0.28; }
+

@@ -1,0 +1,22 @@
+﻿.roadmap { padding: 180px 0 160px; background: var(--cream-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+.roadmap::before { content: ''; position: absolute; right: -200px; top: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(244,200,66,0.18), transparent 65%); filter: blur(20px); pointer-events: none; }
+.roadmap-head { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: end; margin-bottom: 80px; }
+.roadmap-head h2 { font-size: clamp(44px,7vw,100px); }
+.roadmap-head .lead { font-family: 'Galindo', serif; font-size: 22px; line-height: 1.4; color: var(--ink-2); font-weight: 300; }
+.roadmap-head .lead em { font-style: italic; color: var(--red); }
+.timeline { position: relative; padding-left: 0; }
+.timeline::before { content: ''; position: absolute; left: 18px; top: 24px; bottom: 24px; width: 2px; background: repeating-linear-gradient(to bottom, var(--ink) 0 4px, transparent 4px 10px); opacity: 0.25; }
+.phase { position: relative; display: grid; grid-template-columns: 60px 200px 1fr 130px; gap: 32px; align-items: start; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.phase:last-child { border-bottom: none; }
+.phase .dot { width: 38px; height: 38px; border-radius: 50%; background: var(--cream); border: 2px solid var(--ink); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 700; color: var(--ink); position: relative; z-index: 2; }
+.phase.is-now .dot { background: var(--red); border-color: var(--red); color: var(--cream); box-shadow: 0 0 0 8px rgba(229,82,58,0.15); }
+.phase.is-done .dot { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+.phase .when { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; padding-top: 10px; }
+.phase.is-now .when { color: var(--red); }
+.phase .title { font-family: 'Galindo', serif; font-size: 32px; font-weight: 400; letter-spacing: -0.015em; line-height: 1.15; color: var(--ink); }
+.phase .title em { font-style: italic; color: var(--red); }
+.phase .desc { margin-top: 8px; font-size: 14px; color: var(--ink-2); line-height: 1.55; }
+.phase .status-tag { justify-self: end; align-self: start; margin-top: 10px; font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; padding: 6px 12px; border-radius: 99px; border: 1px solid var(--line-2); color: var(--ink-2); }
+.phase.is-now .status-tag { background: var(--red); color: var(--cream); border-color: var(--red); }
+.phase.is-done .status-tag { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+

@@ -1,0 +1,90 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Galindo&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --red: #E5523A;
+  --red-deep: #C84327;
+  --yellow: #F4C842;
+  --teal: #42BAB8;
+  --green: #5FB85B;
+  --blue: #3D6FB8;
+  --purple: #8D5DA8;
+  --orange: #F39220;
+  --cream: #FFFFFF;
+  --cream-2: #F7F7F9;
+  --paper: #FFFFFF;
+  --ink: #1A1219;
+  --ink-2: #4A3F4A;
+  --ink-3: #9B8979;
+  --line: rgba(26,18,25,0.10);
+  --line-2: rgba(26,18,25,0.18);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--cream); color: var(--ink);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--red); color: var(--cream); }
+img { display: block; max-width: 100%; }
+
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; position: relative; }
+section { position: relative; z-index: 1; }
+
+.display { font-family: 'Galindo', serif; font-weight: 400; letter-spacing: -0.025em; line-height: 0.94; color: var(--ink); }
+.display em { font-style: italic; color: var(--red); font-weight: 400; }
+
+.eyebrow {
+  font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--red); font-weight: 700;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--red); display: block; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; padding: 15px 24px; border-radius: 999px;
+  font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
+  text-decoration: none; cursor: pointer; border: 1.5px solid transparent;
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), background .25s, border-color .25s, color .25s;
+  will-change: transform;
+}
+.btn-primary { background: var(--red); color: var(--cream); border-color: var(--red); }
+.btn-primary:hover { background: var(--red-deep); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--cream); }
+.btn .arrow { transition: transform .35s; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 1s cubic-bezier(.2,.8,.2,1), transform 1s cubic-bezier(.2,.8,.2,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+.paper-texture {
+  position: fixed; inset: 0; pointer-events: none; z-index: 60; mix-blend-mode: multiply; opacity: .04;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/></svg>");
+}
+
+@media (max-width: 980px) {
+  .team-grid { grid-template-columns: 1fr 1fr !important; }
+  .feat-inner { grid-template-columns: 1fr !important; gap: 60px !important; }
+  .feat-inner.rev { direction: ltr !important; }
+  .feat { padding: 80px 0 !important; }
+  .destination { flex: 0 0 320px !important; }
+  .hero-sub { grid-template-columns: 1fr !important; }
+  .float-card.fc-2, .float-card.fc-4 { display: none !important; }
+  nav.top { gap: 14px; padding: 6px 6px 6px 16px; }
+  nav.top .hide-sm { display: none !important; }
+  .phone-secondary { display: none !important; }
+  .stage { height: 420px !important; }
+  .mosaic-orbit { width: 340px !important; height: 340px !important; }
+  .tala-inner { grid-template-columns: 1fr !important; }
+  .tala-right { margin-top: 48px; }
+  .tala-bird { width: 300px !important; }
+  .tala-badge-a { top: auto !important; bottom: 90% !important; right: 0 !important; }
+  .tala-badge-b { bottom: auto !important; top: 80% !important; left: 0 !important; }
+  .values-head, .pin-head, .team-head, .roadmap-head { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .values-grid { grid-template-columns: 1fr !important; }
+  .phase { grid-template-columns: 48px 1fr !important; gap: 18px !important; }
+  .team-footnote { grid-template-columns: 1fr !important; text-align: left !important; gap: 18px !important; }
+}
+
